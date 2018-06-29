@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace IdentityServer.Console
+namespace IdentityServer.ConsoleApp
 {
     class Program
     {

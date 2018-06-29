@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerTest.Mvc", "IdentityServerTest.Mvc\IdentityServerTest.Mvc.csproj", "{6C0F56F0-1263-4D2F-952A-82B058B63901}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerTest.Mvc", "IdentityServerTest.Mvc\IdentityServerTest.Mvc.csproj", "{6C0F56F0-1263-4D2F-952A-82B058B63901}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer.Console", "IdentityServer.Console\IdentityServer.Console.csproj", "{3FA51B79-C038-4A5B-8F28-89A2B8362963}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer.ConsoleApp", "IdentityServer.Console\IdentityServer.ConsoleApp.csproj", "{3FA51B79-C038-4A5B-8F28-89A2B8362963}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerTest.Api", "IdentityServerTest.Api\IdentityServerTest.Api.csproj", "{FF94B7E9-0DA6-4915-864A-930A9FC6AC70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerTest.Api", "IdentityServerTest.Api\IdentityServerTest.Api.csproj", "{FF94B7E9-0DA6-4915-864A-930A9FC6AC70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
