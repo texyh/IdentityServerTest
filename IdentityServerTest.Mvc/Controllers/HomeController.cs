@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
 using Newtonsoft.Json.Linq;
 using IdentityServerTest.Mvc.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace IdentityServerTest.Mvc.Controllers
 {
@@ -15,11 +17,12 @@ namespace IdentityServerTest.Mvc.Controllers
             return View();
         }
 
+        [Authorize]
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            //ViewData["Message"] = "Your application description page.";
 
-            return View();
+            return View((User as ClaimsPrincipal).Claims);
         }
 
         public IActionResult Contact()
@@ -36,6 +39,8 @@ namespace IdentityServerTest.Mvc.Controllers
         
         public async Task Logout()
         {
+            //Request.GetOwinContext().Authentication.SignOut();
+            //return RedirectToAction("Index");
             await HttpContext.SignOutAsync("Cookies");
             await HttpContext.SignOutAsync("oidc");
         }
@@ -60,5 +65,15 @@ namespace IdentityServerTest.Mvc.Controllers
             return View("Contact");
 
         }
+
+        public async Task<IActionResult> CallApiUsingUserAccessToken()
+        {
+            var accessToken = await HttpContext.GetTokenAsync("access_token");
+            var client = new HttpClient();
+            client.SetBearerToken(accessToken);
+            var content = await client.GetStringAsync("https://localhost:44338/");
+            ViewBag.Json = JArray.Parse(content).ToString();
+            return View("json");
+        }
     }
 }
